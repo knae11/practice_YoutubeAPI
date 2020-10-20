@@ -15,13 +15,16 @@ class Youtube {
     const result = await response.json();
     return result.items;
   }
-  search() {
-    fetch(
-      `${this.base}v3/search?part=snippet&maxResults=25&q=bts&type=video&key=${this.key}`,
+  async search(value) {
+    const response = await fetch(
+      `${this.base}v3/search?part=snippet&maxResults=25&q=${value}&type=video&key=${this.key}`,
       this.requestOptions
-    )
-      .then((response) => response.json())
-      .then((result) => console.log(result));
+    );
+    const result = await response.json();
+    return result.items.map((item) => ({
+      ...item,
+      id: item.id.videoId,
+    }));
   }
 }
 

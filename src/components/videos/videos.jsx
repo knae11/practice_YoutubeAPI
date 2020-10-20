@@ -2,7 +2,6 @@ import React from "react";
 import Video from "../video/video";
 import styles from "./videos.module.css";
 function Videos({ videos }) {
-  console.log(videos);
   return (
     <ul className={styles.ul}>
       {videos.map((video) => (

@@ -9,6 +9,11 @@ function App({ youtube }) {
 
   //useEffect 안에 넣어주어야 하는 이유? 마운트가 되거나, 업데이트 될때 해야 되니까!
   //useEffect안에 안넣으면 렌더링 될때마다 불려서 계~~~속 api 불려져ㅠㅠ
+  const onSearch = (searchvalue) => {
+    youtube
+      .search(searchvalue) //
+      .then((videos) => setVidoes(videos));
+  };
   useEffect(() => {
     youtube
       .mostPopular() //
@@ -17,7 +22,7 @@ function App({ youtube }) {
 
   return (
     <div className={styles.app}>
-      <Header />
+      <Header onSearch={onSearch} />
       <Videos videos={videos} />
     </div>
   );
