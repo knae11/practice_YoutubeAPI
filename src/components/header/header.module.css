@@ -2,23 +2,34 @@
   display: flex;
   background-color: black;
   align-items: center;
+
+  height: 4rem;
+  padding: 0.8em 1em;
 }
 .logo {
-  flex: 1 1 30%;
   display: flex;
-
   align-items: center;
   color: white;
-  margin-left: 2em;
+  margin: 1em;
 }
 .image {
   background: transparent;
   width: 40px;
   height: 30px;
+  margin: 0 1em;
 }
 .search {
-  flex: 1 1 70%;
+  flex-basis: 100%;
 }
 .input {
   width: 80%;
+  font-size: 1.6rem;
+  padding: 0.1rem;
+  margin-left: 2em;
+  outline: 0;
+}
+.button {
+  margin-left: 1em;
+  padding: 0.2rem;
+  font-size: 1.3rem;
 }

@@ -13,7 +13,7 @@ function Header(props) {
       </div>
       <div className={styles.search}>
         <input className={styles.input} type="text" />
-        <button>Search</button>
+        <button className={styles.button}>Search</button>
       </div>
     </header>
   );
