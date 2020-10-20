@@ -1,18 +1,24 @@
 import React from "react";
 import styles from "./video.module.css";
-function Video({ video }) {
+function Video({ video, video: { snippet }, onSelect }) {
+  //event에 대한걸 가져오는게 아니고 그냥 클릭된 video의 정보를 가져오면됨!
+  const handleSelect = () => {
+    onSelect(video);
+  };
   return (
-    <>
-      <img
-        className={styles.image}
-        src={video.thumbnails.medium.url}
-        alt="thumbnail"
-      />
-      <div className={styles.card}>
-        <h3 className={styles.title}>{video.title}</h3>
-        <h5 className={styles.channel}>{video.channelTitle}</h5>
+    <li className={styles.li} key={video.id} onClick={handleSelect}>
+      <div className={styles.container}>
+        <img
+          className={styles.image}
+          src={snippet.thumbnails.medium.url}
+          alt="thumbnail"
+        />
+        <div className={styles.card}>
+          <h3 className={styles.title}>{snippet.title}</h3>
+          <h5 className={styles.channel}>{snippet.channelTitle}</h5>
+        </div>
       </div>
-    </>
+    </li>
   );
 }
 

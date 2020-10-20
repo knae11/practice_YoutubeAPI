@@ -1,13 +1,6 @@
 .ul {
   list-style: none;
   display: flex;
-  padding: 0 4em;
+  padding: 0;
   flex-wrap: wrap;
-}
-.li {
-  flex-basis: 50%;
-  display: flex;
-  border: 1px solid lightgrey;
-  padding: 1em;
-  align-items: center;
 }
