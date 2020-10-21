@@ -1,12 +1,13 @@
-import React from "react";
+import React, { memo } from "react";
 import styles from "./video.module.css";
-function Video({ video, video: { snippet }, onSelect }) {
+const Video = memo(({ video, video: { snippet }, onSelect, display }) => {
+  const displayType = display === "list" ? styles.list : styles.grid;
   //event에 대한걸 가져오는게 아니고 그냥 클릭된 video의 정보를 가져오면됨!
   const handleSelect = () => {
     onSelect(video);
   };
   return (
-    <li className={styles.li} key={video.id} onClick={handleSelect}>
+    <li className={`${styles.li} ${displayType}`} onClick={handleSelect}>
       <div className={styles.container}>
         <img
           className={styles.image}
@@ -20,6 +21,6 @@ function Video({ video, video: { snippet }, onSelect }) {
       </div>
     </li>
   );
-}
+});
 
 export default Video;

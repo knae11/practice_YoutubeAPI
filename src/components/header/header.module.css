@@ -18,11 +18,8 @@
   height: 30px;
   margin: 0 1em;
 }
-.search {
-  flex-basis: 100%;
-}
 .input {
-  width: 80%;
+  flex-basis: 100%;
   font-size: 1.6rem;
   padding: 0.1rem;
   margin-left: 2em;

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { memo } from "react";
 import { useRef } from "react";
 import styles from "./header.module.css";
-function Header({ onSearch }) {
+const Header = memo(({ onSearch }) => {
+  console.log("header");
   const inputRef = useRef();
   const handleSearch = () => {
     const value = inputRef.current.value;
@@ -27,19 +28,18 @@ function Header({ onSearch }) {
         />
         <h2>Youtube</h2>
       </div>
-      <div className={styles.search}>
-        <input
-          onKeyPress={handleKey}
-          ref={inputRef}
-          className={styles.input}
-          type="text"
-        />
-        <button onClick={handleClick} className={styles.button}>
-          Search
-        </button>
-      </div>
+      <input
+        onKeyPress={handleKey}
+        ref={inputRef}
+        className={styles.input}
+        type="search"
+        placeholder="search videos"
+      />
+      <button onClick={handleClick} className={styles.button}>
+        Search
+      </button>
     </header>
   );
-}
+});
 
 export default Header;

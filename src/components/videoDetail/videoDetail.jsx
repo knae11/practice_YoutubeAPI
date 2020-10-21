@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./videoDetail.module.css";
 function VideoDetail({ selectedVideo, selectedVideo: { snippet } }) {
   return (
-    <>
+    <section className={styles.detail}>
       <iframe
         title="youtube video player"
         type="text/html"
@@ -14,8 +14,8 @@ function VideoDetail({ selectedVideo, selectedVideo: { snippet } }) {
       ></iframe>
       <h3>{snippet.title}</h3>
       <h4>{snippet.channelTitle}</h4>
-      <pre>{snippet.description}</pre>
-    </>
+      <pre className={styles.description}>{snippet.description}</pre>
+    </section>
   );
 }
 
